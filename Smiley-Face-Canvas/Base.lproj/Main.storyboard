@@ -26,47 +26,71 @@
                                             <constraint firstAttribute="width" constant="69" id="rRY-hz-pzV"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="happy" translatesAutoresizingMaskIntoConstraints="NO" id="Wdh-8I-wga">
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="happy" translatesAutoresizingMaskIntoConstraints="NO" id="Wdh-8I-wga">
                                         <rect key="frame" x="22" y="40" width="75" height="72"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="72" id="fqA-cy-3gL"/>
                                             <constraint firstAttribute="width" constant="75" id="pRj-qB-sS7"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="3zk-9f-UzP" appends="YES" id="CIw-Yr-iui"/>
+                                        </connections>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tongue" translatesAutoresizingMaskIntoConstraints="NO" id="RUx-eO-XRC">
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tongue" translatesAutoresizingMaskIntoConstraints="NO" id="RUx-eO-XRC">
                                         <rect key="frame" x="123" y="135" width="75" height="72"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="75" id="R5J-o4-kyA"/>
                                             <constraint firstAttribute="height" constant="72" id="oWd-BT-pjq"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="tlg-Bt-mXN" appends="YES" id="UwZ-tW-ChB"/>
+                                        </connections>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="excited" translatesAutoresizingMaskIntoConstraints="NO" id="s59-0X-apN">
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="excited" translatesAutoresizingMaskIntoConstraints="NO" id="s59-0X-apN">
                                         <rect key="frame" x="123" y="40" width="75" height="72"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="72" id="Z9X-V9-Vsx"/>
                                             <constraint firstAttribute="width" constant="75" id="geS-QZ-Tpc"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="i7B-bf-K47" appends="YES" id="azr-Cj-8lx"/>
+                                        </connections>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dead" translatesAutoresizingMaskIntoConstraints="NO" id="167-Ae-Rcb">
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dead" translatesAutoresizingMaskIntoConstraints="NO" id="167-Ae-Rcb">
                                         <rect key="frame" x="223" y="135" width="75" height="72"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="72" id="BAp-Ub-x3d"/>
                                             <constraint firstAttribute="width" constant="75" id="s8Q-Nn-22Z"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="cFE-wB-sYw" appends="YES" id="3G9-TX-sE3"/>
+                                        </connections>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wink" translatesAutoresizingMaskIntoConstraints="NO" id="1Vx-eG-s9m">
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wink" translatesAutoresizingMaskIntoConstraints="NO" id="1Vx-eG-s9m">
                                         <rect key="frame" x="223" y="40" width="75" height="72"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="75" id="lHS-Lx-dit"/>
                                             <constraint firstAttribute="height" constant="72" id="vV1-tC-Pkg"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="YYH-ka-M9C" appends="YES" id="Ov8-p3-k2B"/>
+                                        </connections>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sad" translatesAutoresizingMaskIntoConstraints="NO" id="6qx-GR-jDn">
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sad" translatesAutoresizingMaskIntoConstraints="NO" id="6qx-GR-jDn">
                                         <rect key="frame" x="22" y="135" width="75" height="72"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="75" id="MIE-Uo-82b"/>
                                             <constraint firstAttribute="height" constant="72" id="t5g-9N-bDr"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="aKk-eo-1dO" appends="YES" id="xYr-3B-T78"/>
+                                        </connections>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.63383838383838387" green="0.63383838383838387" blue="0.63383838383838387" alpha="1" colorSpace="calibratedRGB"/>
@@ -116,6 +140,36 @@
                 <panGestureRecognizer minimumNumberOfTouches="1" id="Rea-lv-3sX">
                     <connections>
                         <action selector="onTrayPanGesture:" destination="vXZ-lx-hvc" id="NBt-hv-gfP"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="cFE-wB-sYw">
+                    <connections>
+                        <action selector="dragFace:" destination="vXZ-lx-hvc" id="dyH-qp-pfS"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="YYH-ka-M9C">
+                    <connections>
+                        <action selector="dragFace:" destination="vXZ-lx-hvc" id="1hz-7Y-6vX"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="i7B-bf-K47">
+                    <connections>
+                        <action selector="dragFace:" destination="vXZ-lx-hvc" id="H1I-Se-MDK"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="tlg-Bt-mXN">
+                    <connections>
+                        <action selector="dragFace:" destination="vXZ-lx-hvc" id="DIC-PC-5hL"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="3zk-9f-UzP">
+                    <connections>
+                        <action selector="dragFace:" destination="vXZ-lx-hvc" id="06I-4U-Lcd"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="aKk-eo-1dO">
+                    <connections>
+                        <action selector="dragFace:" destination="vXZ-lx-hvc" id="rid-Kz-0pI"/>
                     </connections>
                 </panGestureRecognizer>
             </objects>
