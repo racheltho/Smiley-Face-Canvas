@@ -14,13 +14,33 @@ class ViewController: UIViewController {
     var trayUpCenter: CGPoint!
     var trayDownCenter: CGPoint!
     var startPoint: CGPoint!
+    var faceOriginalCenter: CGPoint!
     var newlyCreatedFace: UIImageView!
     
     @IBOutlet var screenView: UIView!
     @IBOutlet weak var trayView: UIView!
     
     @IBAction func dragFace(sender: UIPanGestureRecognizer) {
-    
+        var point = sender.locationInView(screenView)
+        
+        switch sender.state {
+        case UIGestureRecognizerState.Began:
+            var imageView = sender.view as UIImageView
+            newlyCreatedFace = UIImageView(image: imageView.image)
+            screenView.addSubview(newlyCreatedFace)
+            newlyCreatedFace.center = imageView.center
+            newlyCreatedFace.center.y += trayView.frame.origin.y
+            startPoint = point
+            faceOriginalCenter = newlyCreatedFace.center
+        case UIGestureRecognizerState.Changed:
+            newlyCreatedFace.center.x = faceOriginalCenter.x + point.x - startPoint.x  // point.x
+            newlyCreatedFace.center.y = faceOriginalCenter.y + point.y - startPoint.y  // point.y
+//        case UIGestureRecognizerState.Ended:
+            
+        default:
+            break
+        }
+
     
     }
     
@@ -45,8 +65,6 @@ class ViewController: UIViewController {
         default:
             break
         }
-        screenView.layoutIfNeeded()
-        trayView.layoutIfNeeded()
     }
 
 
