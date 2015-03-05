@@ -8,30 +8,80 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIGestureRecognizerDelegate {
 
     var trayOriginalCenter: CGPoint!
     var trayUpCenter: CGPoint!
     var trayDownCenter: CGPoint!
     var startPoint: CGPoint!
     var faceOriginalCenter: CGPoint!
+    var panFaceOriginalCenter: CGPoint!
     var newlyCreatedFace: UIImageView!
     
     @IBOutlet var screenView: UIView!
     @IBOutlet weak var trayView: UIView!
     
+    func onFacePan(sender: UIPanGestureRecognizer){
+        println("inside pan gesture recognizer")
+        var point = sender.locationInView(screenView)
+        var thisFace = sender.view
+        switch sender.state {
+        case UIGestureRecognizerState.Began:
+            panFaceOriginalCenter = thisFace!.center
+            thisFace!.transform = CGAffineTransformMakeScale(1.2, 1.2)
+            startPoint = point
+        case UIGestureRecognizerState.Changed:
+            thisFace!.center.x = panFaceOriginalCenter.x + point.x - startPoint.x  // point.x
+            thisFace!.center.y = panFaceOriginalCenter.y + point.y - startPoint.y  // point.y
+        case UIGestureRecognizerState.Ended:
+            thisFace!.transform = CGAffineTransformMakeScale(1, 1)
+            
+        default:
+            break
+        }
+    }
+    
+    func onFacePinch(sender: UIPinchGestureRecognizer){
+        println("inside pinch gesture recognizer")
+        sender.view!.transform = CGAffineTransformScale(sender.view!.transform,
+            sender.scale, sender.scale)
+        sender.scale = 1
+    }
+    
+    func onFaceRotate(recognizer: UIRotationGestureRecognizer) {
+        recognizer.view!.transform = CGAffineTransformRotate(recognizer.view!.transform, recognizer.rotation)
+        recognizer.rotation = 0
+    }
+    
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer!, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer!) -> Bool {
+        return true
+    }
+    
     @IBAction func dragFace(sender: UIPanGestureRecognizer) {
         var point = sender.locationInView(screenView)
-        
         switch sender.state {
         case UIGestureRecognizerState.Began:
             var imageView = sender.view as UIImageView
+            
             newlyCreatedFace = UIImageView(image: imageView.image)
             screenView.addSubview(newlyCreatedFace)
             newlyCreatedFace.center = imageView.center
             newlyCreatedFace.center.y += trayView.frame.origin.y
             startPoint = point
             faceOriginalCenter = newlyCreatedFace.center
+            
+            var panGestureRecognizer = UIPanGestureRecognizer(target: self, action: "onFacePan:")
+            newlyCreatedFace.userInteractionEnabled = true
+            newlyCreatedFace.addGestureRecognizer(panGestureRecognizer)
+            
+            var pinchGestureRecognizer = UIPinchGestureRecognizer(target: self, action: "onFacePinch:")
+            pinchGestureRecognizer.delegate = self;
+            newlyCreatedFace.addGestureRecognizer(pinchGestureRecognizer)
+            
+            var rotateGestureRecognizer = UIRotationGestureRecognizer(target: self, action: "onFaceRotate:")
+            rotateGestureRecognizer.delegate = self;
+            newlyCreatedFace.addGestureRecognizer(rotateGestureRecognizer)
+            
         case UIGestureRecognizerState.Changed:
             newlyCreatedFace.center.x = faceOriginalCenter.x + point.x - startPoint.x  // point.x
             newlyCreatedFace.center.y = faceOriginalCenter.y + point.y - startPoint.y  // point.y
